@@ -439,19 +439,25 @@ a:hover,
 footer
 */
 
-footer code,
-footer pre { background: $off-white; color: #ccc;
-	border-bottom: 1px solid #d8dee9;
-}
+footer {
+  margin-top: 4.5rem;
 
-footer code {
-	padding: 2px 4px;
-	vertical-align: text-bottom;
-}
+  code,
+  pre {
+    background: $off-white;
+    color: #ccc;
+	  border-bottom: 1px solid #d8dee9;
+  }
 
-footer pre {
-	padding: 16px;
-	box-shadow: 0 1px 1px 1px #ccc;
+  code {
+    padding: 2px 4px;
+    vertical-align: text-bottom;
+  }
+
+  pre {
+    padding: 16px;
+    box-shadow: 0 1px 1px 1px #ccc;
+  }
 }
 
 .string {

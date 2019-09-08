@@ -310,7 +310,24 @@ body {
 	pointer-events: none;
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale'); background: none !important;
 	padding-top: 30vh;
+  float: left;
 }
+
+nav {
+  text-decoration: none;
+  float: right;
+  li {
+    display: inline-block;
+    box-sizing: content-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  } 
+}
+
+.intro__content nav {
+  pointer-events: auto;
+}
+
 
 .intro__content h1,
 .intro__content h2 {

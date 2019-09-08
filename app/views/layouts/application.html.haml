@@ -3,6 +3,9 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    %meta{property: "og:site_name", content: "Dan Gould"}
+    %meta{property: "og:title", content: full_title(yield(:title))}
+    %meta{property: "og:image", content: image_tag("dan-hanzi.svg")}
     %title= full_title(yield(:title))
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'

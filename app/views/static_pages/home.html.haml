@@ -26,39 +26,39 @@
   %h2 Creations:
   .projects
     .project-card
-      %ul.project-card__technologies
+      %ul(class="project-card__technologies" data-aos="fade-right" data-aos-anchor="#trigger-breeze")
         %li C#
         %li Bitcoin
         %li Angular
         %li TypeScript
         %li Docker
       %a{href: "https://github.com/stratisproject/Breeze/releases/tag/1.0.1", target: "_blank"}
-        =image_tag "breeze-wallet.png", class: "m-full-width"
-        .project-card__caption
+        =image_tag "breeze-wallet.png", class: "m-full-width", id: "trigger-breeze", data: { aos: "slide-up" }
+        .project-card__caption(data-aos="fade-left" data-aos-anchor="#trigger-breeze")
           %h2 Breeze Privacy Protocol
           %p Cryptographic bitcoin anonymiser powered by TumbleBit &amp; Stratis
     .project-card
-      %ul.project-card__technologies
+      %ul(class="project-card__technologies" data-aos="fade-right" data-aos-anchor="#trigger-tony")
         %li CSS
         %li PHP
         %li HTML
         %li Experience
         %li WordPress
       %a{:href => "http://tonygeiger.com", target: "_blank"}
-        =image_tag "color-me-gone-phone.jpg", class: "m-full-width"
-        .project-card__caption
+        =image_tag "color-me-gone-phone.jpg", class: "m-full-width", id: "trigger-tony", data: { aos: "slide-up" }
+        .project-card__caption(data-aos="fade-left" data-aos-anchor="#trigger-tony")
           %h2 Tony Geiger
           %p Political, physical, and spiritual statements on the human condition
     .project-card
-      %ul.project-card__technologies
+      %ul(class="project-card__technologies" data-aos="fade-right" data-aos-anchor="#trigger-bfd")
         %li CSS
         %li JavaScript
         %li WordPress
         %li PHP
         %li HTML
       %a{:href => "http://brookfieldfd.com", target: "_blank"}
-        =image_tag "brookfield-fire.jpg", class: "m-full-width"
-        .project-card__caption
+        =image_tag "brookfield-fire.jpg", class: "m-full-width", id: "trigger-bfd", data: { aos: "slide-up" }
+        .project-card__caption(data-aos="fade-left" data-aos-anchor="#trigger-bfd")
           %h2 Brookfield Fire
           %p My Eagle Scout service project built exclusively on volunteer time
 %section#blog.copy

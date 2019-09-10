@@ -22,3 +22,7 @@ document.addEventListener('turbolinks:load', function () {
   document.querySelector('.static_pages.home') && main();
   document.querySelector('.mathjax') && mathjax();
 });
+
+AOS.init({
+ duration: 300,
+});

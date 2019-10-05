@@ -1,5 +1,8 @@
 # dangould.dev portfolio site
 
+```rails s -e production```
+
+```cap production deploy```
 Currently, It's a static page with a of a physics game.
 
 Includes a blog renderer using mixed markdown and Latex. short-form blog.

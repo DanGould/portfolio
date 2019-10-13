@@ -19,11 +19,13 @@ class StaticPagesController < ApplicationController
   private
 
   def get_preview(post)
-    post = render_to_string partial: "blog/#{post.name}"
+    post_text = render_to_string partial: "blog/#{post.name}"
     #whitespace .gsub(/\s+/, ""
-    doc = Nokogiri::HTML(post)
-    post = doc.xpath('//body/*[position() < 6]').to_html()
-    @post = render_to_string inline: post
+    doc = Nokogiri::HTML(post_text)
+    heading = doc.css "h1"
+    heading.wrap("<a href=\"/blog/#{post.name}\"></a>")
+    post_text = doc.xpath('//body/*[position() < 6]').to_html()
+    @post = render_to_string inline: post_text
   end
 
 end

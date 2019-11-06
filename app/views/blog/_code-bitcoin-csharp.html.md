@@ -255,7 +255,7 @@ foreach (var c in receivedCoins)
     {
         // If we can make a ScriptCoin out of our redeemScript
         // we "own" this outpoint
-        ScriptCoin coinToSpend = new ScriptCoin(c, redeemScript);
+        coinToSpend = new ScriptCoin(c, redeemScript);
         outpointToSpend = c.Outpoint;
     }
     catch {}

@@ -9,11 +9,11 @@ jobs:
     services:
       db:
         image: postgres:11
-        ports: ['5432:5432']
         env:
           POSTGRES_USER: scout
           POSTGRES_DB: scout_test
           POSTGRES_PASSWORD: ""
+        ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s

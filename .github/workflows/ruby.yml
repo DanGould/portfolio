@@ -23,9 +23,9 @@ jobs:
         ruby-version: 2.6.x
     - name: Build and test
       env:
-          DATABASE_URL: postgres://postgres:@localhost:5432/test
-          RAILS_ENV: test
-          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        DATABASE_URL: postgres://postgres:@localhost:5432/test
+        RAILS_ENV: test
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
       run: |
         sudo apt-get install libpq-dev
         gem install bundler

@@ -1,0 +1,51 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    name: Build
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        env:
+          POSTGRES_USER: scout
+          POSTGRES_DB: scout_test
+          POSTGRES_PASSWORD: ""
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+           
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    - name: Install dependencies
+      run: |
+        sudo apt-get -yqq install libpq-dev
+        gem install bundler
+        bundle install
+        bundle install --jobs 4 --retry 3
+
+    - name: Setup test database
+      env:
+        RAILS_ENV: test
+        PGHOST: localhost
+        PGUSER: scout
+      run: |
+        bin/rails db:create
+        bin/rails db:migrate
+      
+    - name: Build and test
+      env:
+        DATABASE_URL: postgres://postgres:@localhost:5432/test
+        RAILS_ENV: test
+      run: |
+        bundle exec rails db:prepare
+        bundle exec rails test
